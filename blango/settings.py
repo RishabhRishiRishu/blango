@@ -37,6 +37,7 @@ class Dev(Configuration):
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SAMESITE = 'None'
     SESSION_COOKIE_SAMESITE = 'None'
+    AUTH_USER_MODEL = "blango_auth.User"
 
     PASSWORD_HASHERS = [
         'django.contrib.auth.hashers.Argon2PasswordHasher',
@@ -53,10 +54,13 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
-        'blog',
+        
         'crispy_forms',
         'crispy_bootstrap5',
         'debug_toolbar',
+
+        'blango_auth',
+        'blog',
     ]
 
     MIDDLEWARE = [
